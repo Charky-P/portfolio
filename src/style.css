@@ -7,6 +7,74 @@ body {
   padding-bottom: 50px;
 }
 
+/* Footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  font-size: 16px;
+  align-items: center;
+  padding-left: 150px;
+}
+
+.footer-icons {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+
+.footer-icons li {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons a {
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #000;
+}
+
+.footer img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.footer-text {
+  text-align: left;
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+  padding-left: 150px;
+}
+
+/* End of Footer */
+
 /* Navigation Bar */
 .navigation {
   display: flex;
