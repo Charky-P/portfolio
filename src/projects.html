@@ -11,18 +11,7 @@
 
 <body id="project-page">
   <!-- Navigation Bar -->
-  <header>
-    <a href="index.html" class="logo">
-      <img src="images/favicon.png" alt="Home" class="favicon">
-    </a>
-
-    <div class="navigation">
-      <a href="index.html" class="page">Home</a>
-      <a href="blogs.html" class="page">Blog</a>
-      <a href="projects.html" class="current-page">Projects</a>
-      <a href="resources.html" class="page">Resources</a>
-    </div>
-  </header>
+   <div id="nav-bar"></div>
 
   <main>
     <!-- Projects -->
@@ -31,8 +20,13 @@
 
     <!-- Sorting Buttons -->
     <div class="sort-project-buttons">
-      <button id="sort-project-date" class="active">Sort by Date <span class="arrow">&#8595;</span></button>
-      <button id="sort-project-top-rated">Sort by Top-rated<span class="arrow">&#8595;</span></button>
+      <div class="right-aligned">
+        <button id="sort-project-date" class="active-sort">Sort by Date <span class="arrow">&#8595;</span></button>
+        <button id="sort-project-top-rated">Sort by Top-rated<span class="arrow">&#8595;</span></button>
+      </div>
+      <div class="left-aligned">
+        <button id="project-all" class="active-filter">All</button>
+      </div>
     </div>
     <br>
 
@@ -56,4 +50,7 @@
 
     <div id="projects"></div>
   </main>
+
+  <!-- Footer -->
+  <footer id="footer"></footer>
 </body>

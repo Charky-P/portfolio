@@ -5,7 +5,7 @@
     "tags": ["HTML", "CSS", "JavaScript", "JSON"],
     "summary": "This portfolio website you are currently on showcases my skills and projects in web development. I built it with vanilla HTML, CSS, and JavaScript, and it features an interactive blog and projects section powered by a JSON file, where I used Javascript to dynamically load and display the content, enabling smooth functionality for sorting and filtering, where the projects and blogs are stored in json files. It is a static website which I applied the skills learnt from COMP1531 on (mainly the JavaScript since it was a backend course).",
     "link": "project1.html",
-    "github": "#",
+    "github": "https://github.com/charky-p/portfolio",
     "demo": "index.html",
     "rating": 5
   },

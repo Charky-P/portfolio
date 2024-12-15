@@ -5,81 +5,16 @@ body {
   margin-left: 300px;
   margin-right: 300px;
   padding-bottom: 50px;
+  min-height: 500px;
 }
-
-/* Footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 20px 0;
-  text-align: left;
-  border-top: 1px solid #ddd;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: block;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-  font-size: 16px;
-  align-items: center;
-  padding-left: 150px;
-}
-
-.footer-icons {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  gap: 10px;
-}
-
-.footer-icons li {
-  display: flex;
-  align-items: center;
-}
-
-.footer-icons a {
-  text-decoration: none;
-  color: #555;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: color 0.3s ease;
-}
-
-.footer-icons a:hover {
-  color: #000;
-}
-
-.footer img {
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.footer img:hover {
-  transform: scale(1.1);
-  filter: grayscale(0%);
-}
-
-.footer-text {
-  text-align: left;
-  margin-top: 10px;
-  color: #555;
-  font-size: 14px;
-  padding-left: 150px;
-}
-
-/* End of Footer */
 
 /* Navigation Bar */
 .navigation {
+  position: relative;
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 208px; /* Exact pixel count due to a bug with navigation bar shifting*/
 }
 
 .page, .current-page {
@@ -143,6 +78,8 @@ body {
 /* Blog Posts */
 #blog-posts {
   min-height: 500px;
+  overflow: hidden;
+  flex-grow: 1;
 }
 
 .blog-post {
@@ -208,6 +145,12 @@ body {
 /* End of Blog Posts */
 
 /* Blog Sort Buttons */
+.sort-blog-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .sort-blog-buttons button {
   background-color: #bdc3c7;
   font-size: 16px;
@@ -220,8 +163,6 @@ body {
   gap: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  height: auto;
-  min-width: 150px;
   max-width: 100%;
   white-space: nowrap;
   text-align: center;
@@ -236,10 +177,26 @@ body {
   outline: none;
 }
 
-.sort-blog-buttons button.active {
+.sort-blog-buttons button.active-sort {
   background-color: #3498db;
   color: white;
   font-weight: bold;
+}
+
+.sort-blog-buttons button.active-filter {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+.right-aligned {
+  display: flex;
+  gap: 8px;
+}
+
+.left-aligned {
+  display: flex;
+  gap: 8px;
 }
 
 /* End of Blog Sort Buttons */
@@ -304,6 +261,12 @@ body {
 /* End of Projects */
 
 /* Project Sort Buttons */
+.sort-project-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .sort-project-buttons button {
   background-color: #bdc3c7;
   font-size: 16px;
@@ -316,8 +279,6 @@ body {
   gap: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  height: auto;
-  min-width: 150px;
   max-width: 100%;
   white-space: nowrap;
   text-align: center;
@@ -332,10 +293,84 @@ body {
   outline: none;
 }
 
-.sort-project-buttons button.active {
+.sort-project-buttons button.active-sort {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+.sort-project-buttons button.active-filter {
   background-color: #3498db;
   color: white;
   font-weight: bold;
 }
 
 /* End of Project Sort Buttons */
+
+
+/* Footer */
+#footer {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  font-size: 16px;
+  align-items: center;
+  padding-left: 150px;
+}
+
+.footer-icons {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+
+.footer-icons li {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons a {
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #000;
+}
+
+#footer a {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#footer a:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+} 
+
+.footer-text {
+  text-align: left;
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+  padding-left: 150px;
+}
+/* End of Footer */

@@ -1,4 +1,4 @@
-// Fetch and render blog posts when the page loads
+// Fetch and render blog posts and projects when the page loads, and sorting buttons 
 window.addEventListener('DOMContentLoaded', () => {
   if (document.body.id === 'blog-page') {
     // Default sort by Date (descending)
@@ -6,12 +6,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Set up event listeners for sorting buttons
     document.getElementById('sort-blog-date').addEventListener('click', () => {
-      const sortOrder = toggleActiveButton('sort-blog-date', 'blog');
+      const sortOrder = toggleActiveSortButton('sort-blog-date', 'blog');
       fetchBlogs('date', sortOrder);
     });
 
     document.getElementById('sort-blog-top-rated').addEventListener('click', () => {
-      const sortOrder = toggleActiveButton('sort-blog-top-rated', 'blog');
+      const sortOrder = toggleActiveSortButton('sort-blog-top-rated', 'blog');
       fetchBlogs('rating', sortOrder);
     });
   } else if (document.body.id === 'project-page') {
@@ -20,19 +20,94 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Set up event listeners for sorting buttons
     document.getElementById('sort-project-date').addEventListener('click', () => {
-      const sortOrder = toggleActiveButton('sort-project-date', 'project');
+      const sortOrder = toggleActiveSortButton('sort-project-date', 'project');
       fetchProjects('date', sortOrder);
     });
 
     document.getElementById('sort-project-top-rated').addEventListener('click', () => {
-      const sortOrder = toggleActiveButton('sort-project-top-rated', 'project');
+      const sortOrder = toggleActiveSortButton('sort-project-top-rated', 'project');
       fetchProjects('rating', sortOrder);
     });
   }
 });
 
+// Load navigation bar and footer
 window.addEventListener('DOMContentLoaded', () => {
+  // Navigation bar
+  const currentPath = window.location.pathname;
+  const withinDirectory = currentPath.split('/').length > 2;
+  const indexPath = withinDirectory ? '../index.html' : 'index.html';
+  const blogPath = withinDirectory ? '../blogs.html' : 'blogs.html';
+  const projectPath = withinDirectory ? '../projects.html' : 'projects.html';
+  const resourcePath = withinDirectory ? '../resources.html' : 'resources.html';
+  const faviconPath = withinDirectory ? '../images/favicon.png' : 'images/favicon.png';
 
+  const navBarHTML = `
+  <header>
+    <a href="index.html" class="logo">
+      <img src="${faviconPath}" alt="Home" class="favicon">
+    </a>
+
+    <div class="navigation">
+      <a href="${indexPath}" class="page">Home</a>
+      <a href="${blogPath}" class="page">Blog</a>
+      <a href="${projectPath}" class="page">Projects</a>
+      <a href="${resourcePath}" class="page">Resources</a>
+    </div>
+  </header>
+  `;
+
+  document.getElementById('nav-bar').innerHTML = navBarHTML;
+
+  const navLinks = document.querySelectorAll('.navigation a');
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    if (currentPath.includes(linkPath)) {
+      link.classList.add('current-page');
+      link.classList.remove('page');
+    } else if (withinDirectory && currentPath.includes('blogs') && linkPath.includes('blogs')) {
+      link.classList.add('current-page');
+      link.classList.remove('page');
+    } else if (withinDirectory && currentPath.includes('projects') && linkPath.includes('projects')) {
+      link.classList.add('current-page');
+      link.classList.remove('page');
+    } else {
+      link.classList.remove('current-page');
+      link.classList.add('page');
+    }
+  });
+
+  // Footer
+  const footerHTML = `
+  <div class="footer-social">
+    <ul class="footer-icons">
+      <li>
+        <a href="https://github.com/charky-p" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="30" height="30">
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com" target="_blank">
+          <img src="https://img.icons8.com/ios/452/linkedin.png" alt="LinkedIn" width="30" height="30">
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="gmail.com" target="_blank">
+          <img src="https://img.icons8.com/?size=100&id=86840&format=png&color=000000" alt="Email" width="30" height="30">
+          Email
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-text">
+    &copy; 2024 Charles Podesta
+  </div>
+  `
+
+  document.getElementById('footer').innerHTML = footerHTML;
 });
 
 /**
@@ -113,13 +188,13 @@ function renderBlogs(blogs) {
  * 
  * @returns { string } - 'desc' or 'asc' depending on the arrow representing the sorting order 
  */
-function toggleActiveButton(buttonId, type) {
+function toggleActiveSortButton(buttonId, type) {
   const buttons = document.querySelectorAll(`.sort-${type}-buttons button`);
 
   // Check if button was already active then switch arrows
   const active = document.getElementById(buttonId);
   const arrow = document.querySelector(`#${buttonId} .arrow`);
-  if (active.classList.contains('active')) {
+  if (active.classList.contains('active-sort')) {
     if (arrow.innerHTML === String.fromCharCode(8595)) {
       arrow.innerHTML = String.fromCharCode(8593);
     } else {
@@ -127,8 +202,8 @@ function toggleActiveButton(buttonId, type) {
     }
   }
 
-  buttons.forEach(button => button.classList.remove('active'));
-  document.getElementById(buttonId).classList.add('active');
+  buttons.forEach(button => button.classList.remove('active-sort'));
+  document.getElementById(buttonId).classList.add('active-sort');
   return arrow.innerHTML === String.fromCharCode(8595) ? 'desc' : 'asc';
 }
 
@@ -161,17 +236,16 @@ function renderProjects(projects) {
     projectElement.classList.add('project');
 
     projectElement.innerHTML = `
-          <div>
-            <a href="${project.link}" class="project-title"><strong>${project.title}</strong></a>
-            <div class="project-meta">
-                <span class="project-date">${project.date}</span>
-                <div class="project-tags">
-                    ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                </div>
-            </div>
-            <p class="project-summary">${project.summary}</p>
-            <a href="${project.github}" class="project-github">View on Github</a>
-            <a href="${project.demo}" class="project-demo">View Demo</a>
+    <a href="${project.link}" class="project-title"><strong>${project.title}</strong></a>
+    <div class="project-meta">
+        <span class="project-date">${project.date}</span>
+        <div class="project-tags">
+            ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+        </div>
+    </div>
+    <p class="project-summary">${project.summary}</p>
+    <a href="${project.github}" class="project-github" target="_blank">View on Github</a>
+    <a href="${project.demo}" class="project-demo" target="_blank">View Demo</a>
     `;
 
     container.appendChild(projectElement);
