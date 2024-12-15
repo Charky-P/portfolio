@@ -207,6 +207,14 @@ function toggleActiveSortButton(buttonId, type) {
   return arrow.innerHTML === String.fromCharCode(8595) ? 'desc' : 'asc';
 }
 
+/**
+ * Fetch project data from projects.json
+ * 
+ * @param { string } sortBy - sort type, for example 'date' or 'rating'
+ * @param { string } sortOrder - order of sort for example 'asc' or 'desc'
+ * 
+ * @returns { null }
+ */
 function fetchProjects(sortBy, sortOrder) {
   fetch('projects.json').then(response => response.json()).then(data => {
     const sortedProjects = sortProjects(data, sortBy, sortOrder);
@@ -214,6 +222,15 @@ function fetchProjects(sortBy, sortOrder) {
   });
 }
 
+/**
+ * Sort projects according to sortBy and sortOrder
+ * 
+ * @param { Array } projects - Array of project objects
+ * @param { string } sortBy - sort by type, for example 'date' or 'rating'
+ * @param { string } sortOrder - sort order for example 'asc' or 'desc'
+ * 
+ * @returns { Array } - array of sorted project objects 
+ */
 function sortProjects(projects, sortBy, sortOrder) {
   return projects.sort((a, b) => {
     if (sortBy === 'date') {
@@ -226,6 +243,13 @@ function sortProjects(projects, sortBy, sortOrder) {
   });
 }
 
+/**
+ * Render projects into HTML using project data in an array
+ * 
+ * @param { Array } projects - Array of project objects
+ * 
+ * @returns { null } 
+ */
 function renderProjects(projects) {
   const container = document.getElementById('projects');
   container.innerHTML = '';
