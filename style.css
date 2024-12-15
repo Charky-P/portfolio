@@ -1,0 +1,273 @@
+/* Font Family and Margins */
+body {
+  font-family: 'Inter', sans-serif;
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-bottom: 50px;
+}
+
+/* Navigation Bar */
+.navigation {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.page, .current-page {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Lower underline */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: black;
+  transition: width 0.3s;
+}
+
+.page:hover::after {
+  width: 100%;
+}
+
+.current-page {
+  border-color: black;
+  background-color: white;
+  color: black;
+}
+
+.current-page:hover {
+  background-color: black;
+  color: white;
+}
+
+.current-page::after {
+  display: none;
+}
+
+/* Logo Link (Favicon) */
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  z-index: 10;
+}
+
+.favicon {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+/* End of Navigation Bar */
+
+/* Blog Posts */
+#blog-posts {
+  min-height: 500px;
+}
+
+.blog-post {
+  display: flex; /* Align the image and text side by side */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  align-items: flex-start;
+}
+
+.blog-post img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.blog-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.blog-title:hover {
+  color: #3498db;
+}
+
+.blog-meta {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.blog-date {
+  margin-right: 10px;
+}
+
+.blog-tags {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.blog-tag {
+  background-color: #3498db;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.blog-summary {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* End of Blog Posts */
+
+/* Blog Sort Buttons */
+.sort-blog-buttons button {
+  background-color: #bdc3c7;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  height: auto;
+  min-width: 150px;
+  max-width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sort-blog-buttons button:hover {
+  background-color: #95a5a6;
+}
+
+.sort-blog-buttons button:focus {
+  outline: none;
+}
+
+.sort-blog-buttons button.active {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+/* End of Blog Sort Buttons */
+
+/* Projects */
+#projects {
+  min-height: 500px;
+}
+
+.project {
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  align-items: flex-start;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.project-title:hover {
+  color: #3498db;
+}
+
+.project-meta {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.project-date {
+  margin-right: 10px;
+}
+
+.project-tags {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  background-color: #3498db;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.project-summary {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* End of Projects */
+
+/* Project Sort Buttons */
+.sort-project-buttons button {
+  background-color: #bdc3c7;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  height: auto;
+  min-width: 150px;
+  max-width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sort-project-buttons button:hover {
+  background-color: #95a5a6;
+}
+
+.sort-project-buttons button:focus {
+  outline: none;
+}
+
+.sort-project-buttons button.active {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+/* End of Project Sort Buttons */

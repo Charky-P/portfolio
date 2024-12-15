@@ -1,0 +1,110 @@
+[
+  {
+    "title": "How to Build a Portfolio Website",
+    "date": "Dec 14, 2024",
+    "tags": ["Web Development", "HTML", "CSS"],
+    "summary": "In this post, I walk you through the process of building a simple portfolio website using HTML, CSS, and JavaScript. It’s a great project for anyone starting out in web development.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post1.html",
+    "rating": 4.5
+  },
+  {
+    "title": "Understanding JavaScript Closures",
+    "date": "Jan 10, 2024",
+    "tags": ["JavaScript", "Programming", "Closures"],
+    "summary": "JavaScript closures can be confusing, but they are a powerful feature of the language. In this post, we break down what closures are and how they work with examples.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post2.html",
+    "rating": 4.8
+  },
+  {
+    "title": "A Guide to Asynchronous JavaScript",
+    "date": "June 10, 2023",
+    "tags": ["JavaScript", "Asynchronous", "Programming"],
+    "summary": "Asynchronous programming is a key concept in JavaScript. Learn how promises, async/await, and callbacks work to handle asynchronous operations.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post3.html",
+    "rating": 4.6
+  },
+  {
+    "title": "CSS Flexbox: A Comprehensive Guide",
+    "date": "July 12, 2023",
+    "tags": ["CSS", "Web Design", "Responsive"],
+    "summary": "Flexbox is a powerful tool for creating responsive layouts. This guide covers the basics and provides real-world examples of how to use Flexbox effectively.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post4.html",
+    "rating": 4.7
+  },
+  {
+    "title": "Mastering Python List Comprehensions",
+    "date": "August 8, 2023",
+    "tags": ["Python", "Programming", "List Comprehensions"],
+    "summary": "Python list comprehensions are a concise way to create lists. In this post, we explore how to use them and why they are so useful.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post5.html",
+    "rating": 4.9
+  },
+  {
+    "title": "The Basics of Node.js",
+    "date": "September 15, 2023",
+    "tags": ["Node.js", "JavaScript", "Backend"],
+    "summary": "Node.js allows you to run JavaScript on the server side. This post introduces you to the basics of Node.js and how to build a simple server.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post6.html",
+    "rating": 4.5
+  },
+  {
+    "title": "Introduction to GraphQL",
+    "date": "October 3, 2023",
+    "tags": ["GraphQL", "API", "JavaScript"],
+    "summary": "GraphQL is a query language for APIs that allows clients to request specific data. This post covers the basics and compares it with RESTful APIs.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post7.html",
+    "rating": 4.4
+  },
+  {
+    "title": "Understanding JavaScript's 'this' Keyword",
+    "date": "October 25, 2023",
+    "tags": ["JavaScript", "Programming", "'this' keyword"],
+    "summary": "The 'this' keyword in JavaScript can be tricky. This post breaks down its behavior in different contexts and how to use it effectively.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post8.html",
+    "rating": 4.7
+  },
+  {
+    "title": "Exploring Object-Oriented Programming in Python",
+    "date": "November 7, 2023",
+    "tags": ["Python", "OOP", "Programming"],
+    "summary": "Object-oriented programming (OOP) is a paradigm that organizes code around objects. This post explains the core concepts of OOP in Python.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post9.html",
+    "rating": 4.6
+  },
+  {
+    "title": "Building RESTful APIs with Express.js",
+    "date": "November 20, 2023",
+    "tags": ["Express.js", "Node.js", "Backend"],
+    "summary": "Learn how to build RESTful APIs using Express.js in Node.js. This post covers the essentials of routing, middleware, and more.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post10.html",
+    "rating": 4.8
+  },
+  {
+    "title": "A Beginner's Guide to SQL Queries",
+    "date": "December 5, 2023",
+    "tags": ["SQL", "Databases", "Programming"],
+    "summary": "SQL is a powerful language for managing and querying databases. In this post, we cover the basics of SQL queries and how to use them effectively.",
+    "image": "https://via.placeholder.com/100x100",
+    "link": "post11.html",
+    "rating": 4.7
+  },
+  {
+    "title": "COMP1511 Course Review",
+    "date": "Dec 14, 2024",
+    "tags": ["COMP1511", "UNSW", "C"],
+    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "image": "images/comp1511-blog-image.jpg",
+    "link": "blogs/comp1511-blog.html",
+    "rating": 0
+  }
+]

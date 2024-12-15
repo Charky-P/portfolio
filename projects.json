@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Portfolio Website",
+    "date": "Dec 2024",
+    "tags": ["HTML", "CSS", "JavaScript", "JSON"],
+    "summary": "This portfolio website you are currently on showcases my skills and projects in web development. I built it with vanilla HTML, CSS, and JavaScript, and it features an interactive blog and projects section powered by a JSON file, where I used Javascript to dynamically load and display the content, enabling smooth functionality for sorting and filtering, where the projects and blogs are stored in json files. It is a static website which I applied the skills learnt from COMP1531 on (mainly the JavaScript since it was a backend course).",
+    "link": "project1.html",
+    "github": "#",
+    "demo": "index.html",
+    "rating": 5
+  },
+  {
+    "title": "MIPS Assembly Matrix Transposer",
+    "date": "Nov 2024",
+    "tags": ["Assembly", "MIPS", "Low-Level Programming"],
+    "summary": "Implemented a MIPS Assembly program to efficiently transpose a matrix by manipulating memory directly. This project deepened my understanding of low-level programming and memory management.",
+    "link": "project2.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.5
+  },
+  {
+    "title": "Lasagna Timer in Java",
+    "date": "Sep 2024",
+    "tags": ["Java", "OOP"],
+    "summary": "Developed a Java program to calculate cooking times for lasagna using reusable methods within a class. This project strengthened my object-oriented programming skills and taught me how to structure reusable methods.",
+    "link": "project3.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.2
+  },
+  {
+    "title": "Bayes' Theorem Probability Calculator",
+    "date": "Aug 2024",
+    "tags": ["Mathematics", "Probability", "Maple"],
+    "summary": "Created a tool using Maple to calculate probabilities based on Bayes' Theorem. This project reinforced my understanding of conditional probability and practical applications in real-world problems.",
+    "link": "project4.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.8
+  },
+  {
+    "title": "MATH2621 Course Summary Sheet",
+    "date": "Jul 2024",
+    "tags": ["LaTeX", "Mathematics", "Complex Analysis"],
+    "summary": "Compiled a comprehensive summary sheet for MATH2621 using LaTeX. The document covers key concepts like analytic functions, series expansions, and major theorems of complex analysis.",
+    "link": "project5.html",
+    "github": null,
+    "demo": null,
+    "rating": 4.7
+  },
+  {
+    "title": "Multithreaded File Monitor in C",
+    "date": "Jun 2024",
+    "tags": ["C", "Multithreading", "File System"],
+    "summary": "Developed a multithreaded C program to monitor file sizes and issue warnings when a quota is exceeded. This project improved my understanding of threads, synchronization, and working with the file system.",
+    "link": "project6.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.9
+  },
+  {
+    "title": "Leap Year Finder in JavaScript",
+    "date": "May 2024",
+    "tags": ["JavaScript", "Algorithms"],
+    "summary": "Created a JavaScript program to check leap years, count leap years in an array, and find the next leap year after a given year. This project honed my skills in working with arrays and conditional logic.",
+    "link": "project7.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.3
+  },
+  {
+    "title": "Graph Cycle Detection in C",
+    "date": "Apr 2024",
+    "tags": ["C", "Algorithms", "Graph Theory"],
+    "summary": "Implemented a function in C to detect cycles in a graph using a custom stack ADT. This project enhanced my knowledge of graph traversal algorithms like depth-first search.",
+    "link": "project8.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.6
+  },
+  {
+    "title": "Taylor Series Convergence Visualizer",
+    "date": "Mar 2024",
+    "tags": ["Mathematics", "Visualization", "Maple"],
+    "summary": "Built a visualization tool in Maple to analyze the radius and interval of convergence for Taylor series. The tool highlights convergence at endpoints with detailed plots.",
+    "link": "project9.html",
+    "github": "#",
+    "demo": null,
+    "rating": 4.8
+  },
+  {
+    "title": "COMP1511 Coding Assignments",
+    "date": "Feb 2024",
+    "tags": ["C", "University Project", "Algorithms"],
+    "summary": "Completed a series of assignments for COMP1511, which included implementing algorithms, working with pointers, and creating data structures like linked lists. The assignments built a strong foundation in C programming.",
+    "link": "project10.html",
+    "github": null,
+    "demo": null,
+    "rating": 4.5
+  }
+]

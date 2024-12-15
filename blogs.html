@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body id="blog-page">
+  <!-- Navigation Bar -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="images/favicon.png" alt="Home" class="favicon">
+    </a>
+
+    <div class="navigation">
+      <a href="index.html" class="page">Home</a>
+      <a href="blogs.html" class="current-page">Blog</a>
+      <a href="projects.html" class="page">Projects</a>
+      <a href="resources.html" class="page">Resources</a>
+    </div>
+  </header>
+
+  <!-- Blogs -->
+  <main>
+    <br>
+    <!-- Agenda -->
+    <h3>Agenda</h3>
+    <p>This page is of my blog posts, mostly unprofessional as these are just ideas that come to my mind, as I</p>
+    <p>share my thoughts and experiences on topics ranging from fun projects to education</p>
+    <hr>
+
+    <!-- Blog Posts -->
+    <h1>Blog Posts</h1>
+
+    <!-- Sorting Buttons -->
+    <div class="sort-blog-buttons">
+      <button id="sort-blog-date" class="active">Sort by Date <span class="arrow">&#8595;</span></button>
+      <button id="sort-blog-top-rated">Sort by Top-rated<span class="arrow">&#8595;</span></button>
+    </div>
+    <br>
+    
+    <!-- Blog Schematic
+    <div class="blog-post">
+      <img src="https://via.placeholder.com/100x100" alt="Blog-Image-1">
+      <div>
+        <a href="post1.html" class="blog-title">Title</a>
+        <div class="blog-meta">
+          <span class="blog-date">Jan 10, 2024</span>
+          <div class="blog-tags">
+            <span class="blog-tag">Web Development</span>
+            <span class="blog-tag">HTML</span>
+            <span class="blog-tag">CSS</span>
+          </div>
+        </div>
+        <p class="blog-summary">Summary</p>
+      </div>
+    </div>
+    -->
+
+    <div id="blog-posts"></div>
+  </main>
+</body>
