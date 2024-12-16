@@ -11,10 +11,10 @@
   {
     "title": "COMP1511 Course Review",
     "date": "Dec 14, 2024",
-    "tags": ["COMP1511", "UNSW", "C"],
+    "tags": ["UNSW", "Review", "C"],
     "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
     "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
+    "link": "blogs/course-review-comp1511.html",
     "rating": 3
   },
   {
@@ -77,7 +77,7 @@
     "tags": ["MATH2621", "UNSW", "Complex Analysis"],
     "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
     "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
+    "link": "blogs/course",
     "rating": 0
   }
 ]

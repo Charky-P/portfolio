@@ -201,6 +201,57 @@ body {
 
 /* End of Blog Sort Buttons */
 
+/* Blogs */
+.title {
+  color: #3498db;
+  text-align: center;
+}
+
+#overview h2 {
+  color: #3498db;
+}
+
+#rating {
+  color: #3498db;
+}
+
+#details {
+  color: #3498db;
+}
+
+#critique h2, h3 {
+  color: #3498db;
+}
+
+.blog-list ul {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+.blog-list li {
+  margin: 5px 0;
+}
+
+#critique a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+#critique a:hover {
+  text-decoration: underline;
+}
+
+#overview a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+#overview a:hover {
+  text-decoration: underline;
+}
+
+/* End of Blogs */
+
 /* Projects */
 #projects {
   min-height: 500px;

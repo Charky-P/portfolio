@@ -163,7 +163,7 @@ function renderBlogs(blogs) {
     blogElement.classList.add('blog-post');
 
     blogElement.innerHTML = `
-        <img src="${blog.image}" alt="Blog Image">
+        <a href="${blog.link}"><img src="${blog.image}" alt="Blog Image"></a>
           <div>
             <a href="${blog.link}" class="blog-title"><strong>${blog.title}</strong></a>
             <div class="blog-meta">
