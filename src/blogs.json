@@ -15,22 +15,22 @@
     "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/course-review-comp1511.html",
-    "rating": 3
+    "rating": 4
   },
   {
     "title": "MATH1131 Course Review",
-    "date": "Dec 15, 2024",
-    "tags": ["MATH1131", "UNSW", "Calculus", "Algebra"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
-    "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
-    "rating": 2
+    "date": "Dec 16, 2024",
+    "tags": ["UNSW", "Review", "Calculus", "Algebra"],
+    "summary": "MATH1131 is usually the first math course taken, covering a linear algebra and calculus component. It is an extension to highschool mathematics, but goes more in depth, here is my review.",
+    "image": "images/math1131-thumbnail.png",
+    "link": "blogs/course-review-math1131.html",
+    "rating": 3
   },
   {
     "title": "COMP1521 Course Review",
     "date": "Dec 15, 2024",
     "tags": ["COMP1521", "UNSW", "MIPS", "C"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "summary": "a",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/comp1511-blog.html",
     "rating": 2
@@ -39,7 +39,7 @@
     "title": "MATH1231 Course Review",
     "date": "Dec 15, 2024",
     "tags": ["MATH1231", "UNSW", "Calculus", "Algebra"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "summary": "Work in progress",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/comp1511-blog.html",
     "rating": 0
@@ -48,7 +48,7 @@
     "title": "COMP2521 Course Review",
     "date": "Dec 15, 2024",
     "tags": ["COMP2521", "UNSW", "C", "Algorithms"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "summary": "Work in progress",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/comp1511-blog.html",
     "rating": 0
@@ -57,7 +57,7 @@
     "title": "COMP1531 Course Review",
     "date": "Dec 15, 2024",
     "tags": ["COMP1531", "UNSW", "JavaScript", "TypeScript", "Git"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "summary": "Work in progress",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/comp1511-blog.html",
     "rating": 0
@@ -66,7 +66,7 @@
     "title": "MATH1081 Course Review",
     "date": "Dec 15, 2024",
     "tags": ["MATH1081", "UNSW", "Discrete"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "summary": "Work in progress",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/comp1511-blog.html",
     "rating": 0
@@ -75,9 +75,18 @@
     "title": "MATH2621 Course Review",
     "date": "Dec 15, 2024",
     "tags": ["MATH2621", "UNSW", "Complex Analysis"],
-    "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
+    "summary": "Work in progress",
     "image": "images/comp1511-blog-image.jpg",
     "link": "blogs/course",
     "rating": 0
+  },
+  {
+    "title": "Largest Prime Number In 1 Second",
+    "date": "Dec 16, 2024",
+    "tags": ["Math", "Fun"],
+    "summary": "What is the fastest prime number you can find??? HAHAHHAHAHAH XD",
+    "image": "images/favicon.png",
+    "link": "blogs/fastest-prime.html",
+    "rating": 3
   }
 ]
