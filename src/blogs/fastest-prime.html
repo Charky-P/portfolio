@@ -6,6 +6,9 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="../style.css">
   <script src="../script.js" defer></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
   <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 </head>
 
@@ -17,13 +20,241 @@
   <h1 class="title">Largest Prime Number In 1 Second</h1>
   <hr>
 
-  <h2>Introduction</h2>
+  <h2 class="subtitle">Introduction</h2>
   <p>The goal of this post is to find the largest prime number using code with a runtime of 1 second, we must first 
-    set some rules. Firstly the 1 second includes the extra time added to calculate the time for graphing purposes,
-    the prime number
+    set some rules. Firstly we define a prime number as a positive integer greater than \(1\) that can only be divided by
+    itself and \(1\), for example \(2, 3, 5, 7\) and \(11\) are all prime numbers. To see the code for this mini 
+    project, click <a class="link" href="https://github.com/charky-p/prime" target="_blank">here</a>.
+    <br>
+    <br>
+
+    <strong>Rules:</strong>
+    <ol>
+      <li>
+        The 1 second includes the extra time to calculate the time during runtime, but does not count the time after 
+        the result has been found.
+      </li>
+      <li>
+        Any computations rely within those found during the runtime of the program, this means we cannot start with 
+        a known big prime, however it does not need to store any previous primes, only the largest prime, and it can 
+        use the first 10 known primes \((2, 3, 5, 7, 11, 13, 17, 19, 23, 29)\). To avoid external factors affecting the 
+        computation, the program can be run multiple times, and only the largest prime found will be counted. The 
+        computations must also only occur on the same machine and no parallelism or threads are allowed.
+      </li>
+      <li>
+        The prime number must be exact to the digit, and not an estimate, and it must also verify that it is a prime
+      </li>
+    </ol> 
+    Now the easiest way to code this is using python, however python is a high level language and is not as efficient 
+    as other alternatives like C, so I will use python to find the best algorithm and time complexity, then 
+    code the optimal solution in C.
   </p>
   
-  <h2>Method 1: Trial </h2>
+  <h2 class="subtitle">Method 1: Trial Division</h2 class="subtitle">
+  The Trial Divison method is to simply iterate from \(2\) and increment by \(1\), checking if every positive number less than 
+  \(n\) and not \(1\) does not divide \(n\). The code is relatively simple, with the following pseudocode:
+  <br>
+  <pre><code>
+    func largestPrimeFinder():
+      p = 2
+      largestPrime = 2
+      while 1 second:
+        if isPrime(p):
+          largestPrime = p
+    
+    func isPrime(p):
+      for x from 2 to p - 1:
+        if p % x == 0:
+          return False
+      return True
+  </code></pre>
+  This was able to compute a largest prime number of \(15401\) after multiple attempts.
+  <img class="centered-image"src="../images/prime-trial-divison.png" alt="Trial Division">
+
+  <h2 class="subtitle">Method 2: Efficient Trial Division</h2 class="subtitle">
+  We can utilise a prime number theorem to reduce the amount of computations we need to do.
+
+  <div class="theorem">
+    <strong>Theorem:</strong> If \(n \nmid x\) for all integers \(n\) where \(2 \leq n \leq \sqrt{x}\), then \(x\) 
+    is a prime number.
+  </div>
+  With only this change, we were able to compute the largest prime number of \(329533\) after multiple attempts. We can
+  further boost efficiency by not checking numbers divisible by \(2\) or \(3\), since all prime numbers are of the form 
+  \(6k - 1\) and \(6k + 1\). We can also check the first 10 known primes. Here we obtain the following pseudocode:
+  <pre><code>
+    func largestPrimeFinder():
+      p = 4
+      largestPrime = 4
+      while 1 second:
+        if isPrime(p):
+          largestPrime = p
+    
+    func isPrime(p):
+      known_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+      for prime in known_primes:
+        if p % prime == 0:
+          return False
+
+      for x from 30 to p - 1 incrementing by 6:
+        if p % x == 0 or p % (x + 2) == 0:
+          return False
+      return True
+  </code></pre>
+  This gave us a largest prime of \(510943\).
+  <img class="centered-image"src="../images/prime-trial-division-efficient.png" alt="Efficient Trial Division">
+
+
+  <h2 class="subtitle">Method 3: Mersenne primes</h2 class="subtitle">
+  For this method we will change our strategy from computing primes \(1\) by \(1\), and instead look for a pattern and skip 
+  numbers. A Mersenne prime is a prime number of the form \(2^n - 1\) for some positive integer \(n\), instead of
+  checking if the numbers \(1\) to \(n\) is prime, we check \(2^n - 1\), moreover we can make this more efficient 
+  by considering the following theorem.
+  <div class="theorem">
+    <strong>Theorem:</strong> If \(2^n - 1\) is prime, then so is \(n\), or equivalently, if \(n\) is composite, then
+    \(2^n - 1\) is composite and not prime.
+  </div>
+  Therefore we can first check if \(n\) is prime, and then check if \(2^n - 1\) is prime, so we obtain the following pseudocode:
+  <pre><code>
+    func largestPrimeFinder():
+      p = 2
+      largestPrime = 2
+      while 1 second:
+        if isPrime(p) and isPrime(2^p - 1):
+          largestPrime = 2^p - 1
+    
+    func isPrime(p):
+      known_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+      for prime in known_primes:
+        if p % prime == 0:
+          return False
+
+      for x from 30 to p - 1 incrementing by 6:
+        if p % x == 0 or p % (x + 2) == 0:
+          return False
+      return True
+  </code></pre>
+  This gives us a huge jump in our largest prime number, where without checking if the number is \(n\) is prime,
+  we obtain \(140737488355327\), and when checking \(n\) is prime we obtain \(562949953421311\). We can also test 
+  \(2^n + 1\) which gave us \(1099511627777\), lower than the result with Mersenne primes.
+  <img class="centered-image"src="../images/prime-mersenne.png" alt="Efficient Trial Division">
+
+  <h2 class="subtitle">Method 4: Mersenne primes with Lucas-Lehmer Primality Test</h2 class="subtitle">
+  The GIMPS (Great Internet Mersenne Prime Search), which is the biggest prime searching group uses Mersennes primes 
+  and the Lucas-Lehmer Primality Test. The Lucas-Lehmer Primality Test is \(O(p^2)\) and relies on the following theorem.
+  <div class="theorem">
+    <strong>Theorem:</strong> For \(p\) odd, the Mersenne number \(2^p - 1\) is prime if and only if \(2^p - 1\) divides
+    \(S(p - 1)\) where \(S(n + 1) = S(n)^2 - 2\) and \(S(1) = 4\). 
+  </div>
+  This is extremely fast compared to the previous method, as it specialises in Mersenne primes, giving us the following
+  pseudocode:
+  <pre><code>
+    func largestPrimeFinder():
+      p = 2
+      largestPrime = 2
+      while 1 second:
+        if isMersennePrime(2^p - 1):
+          largestPrime = 2^p - 1
+    
+    // Lucas-Lehmer Primality Test
+    func isMersennePrime(p):
+      s_n = 4
+      for i from 3 to p:
+        s = (s^2 - 2) % (2^p - 1)
+      return s == 0
+  </code></pre>
+  We obtain \(5311379928...728127\) or \(2^{607} - 1\).
+  <img class="centered-image"src="../images/prime-lucas.png" alt="Lucas-Lehmer">
+  <img class="centered-image"src="../images/prime-lucas-log.png" alt="Lucas-Lehmer Logarithmic">
+
+  <h2 class="subtitle">Method 5: Sieve Of Eratosthenes</h2 class="subtitle">
+  We can only apply smaller tweaks now, we go back to the theorem that states if \(p\) is composite, then \(2^p - 1\)
+  is composite, so we want to maximise the efficiency in finding if the smaller numbers \(p\) are prime, since we cannot
+  apply the Lucas-Lehmer Primality Test as that only works for Mersenne primes, and the trial division algorithm is 
+  ineffective. The fastest way is to compute a prime table using the Sieve of Eratosthenes algorithm, which has 
+  \(O(N \log \log N)\) time complexity. The pseudocode is as follows:
+  <pre><code>
+    SIEVE_SIZE = 3000
+
+    func largestPrimeFinder():
+      p = 2
+      largestPrime = 2
+      sieve = sieveOfEratosthenes(SIEVE_SIZE)
+
+      while 1 second:
+        if sieve[p] and isMersennePrime(2^p - 1):
+          largestPrime = 2^p - 1
+    
+    // Lucas-Lehmer Primality Test
+    func isMersennePrime(p):
+      s_n = 4
+      for i from 3 to p:
+        s = (s^2 - 2) % (2^p - 1)
+      return s == 0
+    
+    // Sieve of Eratosthenes
+    func sieveOfEratosthenes(n):
+      sieve = [True] * (n + 1) // An array of length n + 1 all True
+      sieve[0] = False
+      sieve[1] = False
+
+      for i from 2 to sqrt(n):
+        if sieve[i]:
+          for i from p * p to n incrementing by p:
+            sieve[i] = False
+  </code></pre>
+  Note that we chose \(3000\) as the sieve size since previously we obtained \(607\), so we want a number bigger than \(607\)
+  which is our limit of what Mersenne primes we can find, but not too big that the computation of the 
+  sieve of Eratosthenes takes too long, since it is precomputed before finding the Mersenne primes.
+  This allows us to effectively obtain the largest prime as \(104079321...729087\) or \(2^{1279} - 1\).
+  This means we have found the first \(14\) Mersenne primes for \(3, 5, 7, 13, 17, 19, 31, 61, 89, 107, 127, 521, 607\) and \(1279\). 
+  <img class="centered-image"src="../images/prime-eratosthene.png" alt="Sieve of Eratosthene">
+
+  <h2 class="subtitle">Method 6: Using the C Programming Language</h2 class="subtitle">
+  We have found the most optimal solution, at least that I could find for finding big primes in a second, however 
+  since I coded everything in python, I then coded it in C, using <code>gmp.h</code> to manage big numbers.
+  There are two steps to the optiomal method, computing the sieve and then computing the primes in the sieve using 
+  Lucas-Lehmer's Primality Test, however we need to balance the time between computing the sieve and using the primality 
+  test. For example if we set it at \(5000\), we get \(1279\) as the largest (\(2^{1279} - 1\)), otherwise if we set it to \(4000\),
+  we get \(2281\) \((2^{2281} - 1)\). Here is the C code for checking the Mersenne prime using <code>gmp.h</code>.
+  <pre><code>
+    bool checkMersennePrime(int p) {
+      mpz_t m_p;
+      mpz_init(m_p);
+      mpz_ui_pow_ui(m_p, 2, p); // m_p = 2^p
+      mpz_sub_ui(m_p, m_p, 1);  // m_p = 2^p - 1
+
+      mpz_t s_n;
+      mpz_init(s_n);
+      mpz_set_ui(s_n, 4);
+      for (int i = 0; i < p - 2; i++) {
+        mpz_mul(s_n, s_n, s_n);
+        mpz_sub_ui(s_n, s_n, 2);
+        mpz_mod(s_n, s_n, m_p);
+      }
+
+      bool result = mpz_cmp_ui(s_n, 0) == 0;
+      mpz_clear(m_p);
+      mpz_clear(s_n);
+      return result;
+    }
+  </code></pre>
+  Doing a little bit of cheating, we find that the next Mersenne prime is \(3217\), and so
+  we would require the sieve to be at least \(3217\), which unfortunately gives us \(1279\) as the largest. Therefore the final 
+  answer is \(446087557...132836351\) or \(2^{2281} - 1\).
+
+  <h2 class="subtitle">Afterword</h2 class="subtitle">
+  Testing with \(10\) seconds, we get \(4423\) as the largest mersenne prime, and for \(3\) minutes we get \(11213\). Moreover, the 
+  actual largest known prime is a Mersenne prime and is the \(52\)nd Mersenne prime to be discovered, with \(41,024,320\)
+  decimal digits, discovered by GIMPS on October 12th 2024. The prime counting function is a function \(\pi(x)\) which 
+  computes how many prime numbers between \(1\) and \(x\) there are, however it has been found to have a growth function 
+  of \(\displaystyle{\frac{x}{\log{x}}}\). We can use this to estimate there are around \(375\) primes 
+  (the accurate result is \(429\)) in the first \(3000\) numbers, and an estimated \(10^{682}\) primes between 
+  \(1\) and \(2^{2281} - 1\), in which we counted \(442\) primes by skipping a lot of numbers jumping to the Mersenne numbers. 
+  <a class="link" href="https://www.papertrell.com/apps/preview/The-Handy-Math-Answer-Book/Handy%20Answer%20book/What-is-the-story-behind-the-Mersenne-primes/001137022/content/SC/52caff8282fad14abfa5c2e0_default.html" target="_blank">
+  Here</a> you can find the list and dates of when the Mersenne numbers were found (a little bit outdated), where the 
+  Mersenne number I found, \(2281\) was found in 1952, and with \(3\) minutes, 1963. There are a variety of other 
+  prime algorithms, such as Miller-Rabin, AKS, Wilson's theorem however they are usually used for non Mersenne primes.
+  <br><br><br>
 
   <!-- Footer -->
   <div id="footer"></div>

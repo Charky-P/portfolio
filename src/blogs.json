@@ -10,7 +10,7 @@
   },
   {
     "title": "COMP1511 Course Review",
-    "date": "Dec 14, 2024",
+    "date": "Dec 15, 2024",
     "tags": ["UNSW", "Review", "C"],
     "summary": "COMP1511 is UNSW's introduction to programming course, which teaches C and is arguably the best COMP course, here is my review.",
     "image": "images/comp1511-blog-image.jpg",
@@ -84,8 +84,8 @@
     "title": "Largest Prime Number In 1 Second",
     "date": "Dec 16, 2024",
     "tags": ["Math", "Fun"],
-    "summary": "What is the fastest prime number you can find??? HAHAHHAHAHAH XD",
-    "image": "images/favicon.png",
+    "summary": "What is the fastest prime number you can find in under a second of runtime? Here I utilise prime finding algorithms, and talk about the current advancements in prime numbers.",
+    "image": "images/prime-thumbnail.png",
     "link": "blogs/fastest-prime.html",
     "rating": 3
   }

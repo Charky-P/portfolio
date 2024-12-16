@@ -207,6 +207,10 @@ body {
   text-align: center;
 }
 
+.subtitle {
+  color: black;
+}
+
 #overview h2 {
   color: #3498db;
 }
@@ -247,6 +251,26 @@ body {
 }
 
 #overview a:hover {
+  text-decoration: underline;
+}
+
+.centered-image {
+  display: block;
+  margin: auto;
+}
+
+.theorem {
+  text-indent: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.link:hover {
   text-decoration: underline;
 }
 
