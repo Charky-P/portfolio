@@ -32,22 +32,129 @@
 
     <h2 class="title-blue">Contact Me</h2>
     hi u contacted me, send a form:
-    <!-- Contact Form, no CSS yet -->
-    <form class="contact-form">
-      <h2>Contact Form</h2>
-      <!-- Name and Email side by side, labels on top of inputs, send button is same color as others, 
-       contact-form is inside a box -->
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" autocomplete="off" required placeholder="Enter your name">
+  
+    <style>
+      /* Container styles for the form */
+      #contact-box {
+        width: 100%;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+      }
+  
+      #contact-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+  
+      /* Style for each entry box */
+      .entry {
+        margin-bottom: 15px;
+      }
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" autocomplete="off" required placeholder="Enter your email">
+      .entry textarea {
+        font-family: Arial;
+      }
+  
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+      }
+  
+      textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+  
+      /* Flex styling for the name and email inputs to be side by side */
+      .form-row {
+        display: flex;
+        gap: 30px;
+      }
+  
+      .form-row .entry {
+        flex: 1;
+      }
+  
+      /* Submit button styling */
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      .submit-btn:hover {
+        background-color: #2980b9;
+      }
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" autocomplete="off" required placeholder="Write your message here"></textarea>
+      #contact {
+        display: flex;
+        justify-content: space-between;
+        
+      }
 
-      <button type="submit">Send</button>
-    </form>
+      #contact-info {
+        flex: 1;
+        margin-right: 10px;
+      }
+    </style>
+
+  <div id="contact">
+    <div id="contact-info">
+      real
+    </div>
+
+    <div id="contact-box">
+      <h2 class="title-blue">Contact Form</h2>
+      <form class="contact-form">
+        <!-- Name and Email -->
+        <div class="form-row">
+          <div class="entry">
+            <label for="name" class="title-blue">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="off">
+          </div>
+          <div class="entry">
+            <label for="email" class="title-blue">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="off">
+          </div>
+        </div>
+  
+        <!-- Message below the name and email inputs -->
+        <div class="entry">
+          <label for="message" class="title-blue">Message</label>
+          <textarea name="message" id="message" placeholder="Your message" required autocomplete="off"></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+    <!-- Submit Alert -->
+    <div id="submit-alert">
+      <h3>Success!</h3>
+      <p>Your message has been submitted.</p>
+      <button id="close-btn">Close</button>
+    </div>
 
     <hr>
     <h2 class="title-blue">Documents</h2>
