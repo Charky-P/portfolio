@@ -1,32 +1,44 @@
 // Fetch and render blog posts and projects when the page loads, and sorting buttons 
 window.addEventListener('DOMContentLoaded', () => {
   if (document.body.id === 'blog-page') {
-    // Default sort by Date (descending)
-    fetchBlogs('date', 'desc'); 
+    // Default sort by Date (ascending)
+    fetchBlogs('date', 'asc', 'All'); 
 
     // Set up event listeners for sorting buttons
     document.getElementById('sort-blog-date').addEventListener('click', () => {
-      const sortOrder = toggleActiveSortButton('sort-blog-date', 'blog');
-      fetchBlogs('date', sortOrder);
+      const sortOrder = toggleActiveSortButton('sort-blog-date');
+      fetchBlogs('date', sortOrder, getSortFilter());
     });
 
     document.getElementById('sort-blog-top-rated').addEventListener('click', () => {
-      const sortOrder = toggleActiveSortButton('sort-blog-top-rated', 'blog');
-      fetchBlogs('rating', sortOrder);
+      const sortOrder = toggleActiveSortButton('sort-blog-top-rated');
+      fetchBlogs('rating', sortOrder, getSortFilter());
+    });
+
+    document.querySelector('.right-aligned').addEventListener('click', event => {
+      const buttonId = event.target.id;
+      toggleActiveFilterButton(buttonId);
+      fetchBlogs(getSortType(), getSortOrder(), getSortFilter());
     });
   } else if (document.body.id === 'project-page') {
     // Default sort by Date (descending)
-    fetchProjects('date', 'desc');
+    fetchProjects('date', 'desc', 'All');
 
     // Set up event listeners for sorting buttons
     document.getElementById('sort-project-date').addEventListener('click', () => {
-      const sortOrder = toggleActiveSortButton('sort-project-date', 'project');
-      fetchProjects('date', sortOrder);
+      const sortOrder = toggleActiveSortButton('sort-project-date');
+      fetchProjects('date', sortOrder, getSortFilter());
     });
 
     document.getElementById('sort-project-top-rated').addEventListener('click', () => {
-      const sortOrder = toggleActiveSortButton('sort-project-top-rated', 'project');
-      fetchProjects('rating', sortOrder);
+      const sortOrder = toggleActiveSortButton('sort-project-top-rated');
+      fetchProjects('rating', sortOrder, getSortFilter());
+    });
+
+    document.querySelector('.right-aligned').addEventListener('click', event => {
+      const buttonId = event.target.id;
+      toggleActiveFilterButton(buttonId);
+      fetchBlogs(getSortType(), getSortOrder(), getSortFilter());
     });
   }
 });
@@ -115,12 +127,13 @@ window.addEventListener('DOMContentLoaded', () => {
  * 
  * @param { string } sortBy - sortBy category, for example 'date' or 'rating' 
  * @param { string } sortOrder - sortOrder either 'asc' (ascending) or 'dsc' descending
+ * @param { string } sortFilter - sortFilter, for example 'All', 'Review'
  * 
  * @returns { null } 
  */
-function fetchBlogs(sortBy, sortOrder) {
+function fetchBlogs(sortBy, sortOrder, sortFilter) {
   fetch('blogs.json').then(response => response.json()).then(data => {
-    const sortedBlogs = sortBlogs(data, sortBy, sortOrder);
+    const sortedBlogs = sortBlogs(data, sortBy, sortOrder, sortFilter);
     renderBlogs(sortedBlogs);
   });
 }
@@ -131,19 +144,26 @@ function fetchBlogs(sortBy, sortOrder) {
  * @param { Array } blogs - Array of blogs 
  * @param { string } sortBy - sortBy category, for example 'date' or 'rating' 
  * @param { string } sortOrder - sortOrder either 'asc' (ascending) or 'dsc' descending
+ * @param { string } sortFilter - sortFilter, for example 'All', 'Review'
  * 
  * @returns { Array } - Array of sorted blogs
  */
-function sortBlogs(blogs, sortBy, sortOrder) {
-  return blogs.sort((a, b) => {
+function sortBlogs(blogs, sortBy, sortOrder, sortFilter) {
+  const sortedBlogs = blogs.sort((a, b) => {
     if (sortBy === 'date') {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
-      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+      return sortOrder === 'desc' ? dateA - dateB : dateB - dateA;
     } else if (sortBy === 'rating') {
-      return sortOrder === 'asc' ? a.rating - b.rating : b.rating - a.rating;
+      return sortOrder === 'desc' ? a.rating - b.rating : b.rating - a.rating;
     }
   });
+
+  console.log(blogs, sortBy, sortOrder, sortFilter);
+  if (sortFilter === 'All') {
+    return sortedBlogs;
+  }
+  return sortedBlogs.filter(blog => blog.tags.includes(sortFilter));
 }
 
 /**
@@ -181,15 +201,15 @@ function renderBlogs(blogs) {
 }
 
 /**
- * Toggle a button to be active for the sorting buttons of the blog posts
+ * Toggle a sort button to be active for the sorting buttons of the blog posts
  * 
  * @param { string } buttonId - the button Id of what to sort
- * @param { string } type - type of button, for example blog or project
+ * @param { string } page - page of button, for example blog or project
  * 
  * @returns { string } - 'desc' or 'asc' depending on the arrow representing the sorting order 
  */
-function toggleActiveSortButton(buttonId, type) {
-  const buttons = document.querySelectorAll(`.sort-${type}-buttons button`);
+function toggleActiveSortButton(buttonId) {
+  const buttons = document.querySelectorAll('.left-aligned button');
 
   // Check if button was already active then switch arrows
   const active = document.getElementById(buttonId);
@@ -205,6 +225,67 @@ function toggleActiveSortButton(buttonId, type) {
   buttons.forEach(button => button.classList.remove('active-sort'));
   document.getElementById(buttonId).classList.add('active-sort');
   return arrow.innerHTML === String.fromCharCode(8595) ? 'desc' : 'asc';
+}
+
+/**
+ * Toggle a filter button to be active for the filter buttons
+ * 
+ * @param { string } buttonId - button Id of a filter button, for example 'blog-all' 
+ */
+function toggleActiveFilterButton(buttonId) {
+  const buttons = document.querySelectorAll('.right-aligned button');
+
+  // Deactive all buttons and active the buttonId
+  const active = document.getElementById(buttonId);
+  buttons.forEach(button => button.classList.remove('active-filter'));
+  active.classList.add('active-filter');
+}
+
+/**
+ * Get the sorting type for example Sort by Top-rated
+ * 
+ * @returns active button Id
+ */
+function getSortType() {
+  const activeButton = document.querySelector('.left-aligned button.active-sort');
+  if (activeButton.id === 'sort-blog-date' || activeButton.id === 'sort-project-date') {
+    return 'date';
+  } else if (activeButton.id === 'sort-blog-top-rated' || activeButton.id === 'sort-project-top-rated') {
+    return 'rating';
+  } else {
+    return 'error';
+  }
+}
+
+/**
+ * Get the sort order of the active button either ascending or descending
+ * 
+ * @returns 'desc' or 'asc'
+ */
+function getSortOrder() {
+  const arrow = document.querySelector('.left-aligned .active-sort .arrow');
+  if (arrow.innerHTML === String.fromCharCode(8595)) {
+    return 'desc';
+  } else {
+    return 'asc';
+  }
+}
+
+/**
+ * Get the active sort filter button Id, for example All
+ * 
+ * @returns active button Id
+ */
+function getSortFilter() {
+  const activeButton = document.querySelector('.right-aligned button.active-filter');
+  const filter = activeButton.innerHTML;
+  if (filter === 'All') {
+    return 'All';
+  } else if (filter === 'Course Reviews') {
+    return 'Review';
+  } else {
+    return 'N/A';
+  }
 }
 
 /**
@@ -236,9 +317,9 @@ function sortProjects(projects, sortBy, sortOrder) {
     if (sortBy === 'date') {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
-      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+      return sortOrder === 'desc' ? dateA - dateB : dateB - dateA;
     } else if (sortBy === 'rating') {
-      return sortOrder === 'asc' ? a.rating - b.rating : b.rating - a.rating;
+      return sortOrder === 'desc' ? a.rating - b.rating : b.rating - a.rating;
     }
   });
 }
@@ -268,8 +349,8 @@ function renderProjects(projects) {
         </div>
     </div>
     <p class="project-summary">${project.summary}</p>
-    <a href="${project.github}" class="project-github" target="_blank">View on Github</a>
-    <a href="${project.demo}" class="project-demo" target="_blank">View Demo</a>
+    <a class="link" href="${project.github}" class="project-github" target="_blank">View on Github</a> |
+    <a class="link" href="${project.demo}" class="project-demo" target="_blank">View Demo</a>
     `;
 
     container.appendChild(projectElement);

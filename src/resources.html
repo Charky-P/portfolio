@@ -13,12 +13,51 @@
 
   <!-- Navigation Bar -->
   <div id="nav-bar"></div>
+  
+  <style>
+    .container {
+      display: flex; /* Use flexbox */
+      flex-wrap: wrap; /* Allow wrapping onto new rows */
+      gap: 20px; /* Add spacing between the boxes */
+      align-items: flex-start;
+    }
 
-  <main></main>
-  math2621 summary sheet
-  math1131, math1231, 1081 assignments
-  comp2521 thing?
-  notes? other?
+    .resource {
+      width: calc(50% - 54px); /* Two boxes per row (50% width minus half of the gap) */
+      flex: 0 0 auto;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      padding-top: 20px;
+      text-align: center;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <br>
+  <!-- Resources -->
+  <main>
+    <div class="container">
+      <div class="resource">
+        <a class="resource-title" href="assets/math2621-exam-sheet.pdf" target="_blank">MATH2621 Exam Sheet</a>
+        <p>This is an exam sheet made with <span style="font-family: 'Courier New', monospace;">LaTeX</span> 
+          for the MATH2621 Exam, which allowed a maximum of 2 pages. It summaries content and proofs.
+        </p>
+        <a class="link" href="assets/math2621-exam-sheet.pdf" target="_blank">View PDF</a> |
+        <a class="link" href="https://www.overleaf.com/read/vmggbxxxhnzx#f68238" target="_blank">View Latex</a> |
+        <a class="link" href="assets/math2621-exam-sheet.pdf" download="Math2621 Exam Sheet.pdf">Download</a>
+      </div>
+      <div class="resource">
+        <a class="resource-title" href="#" target="_blank">TODO</a>
+        <p>Some other resource
+        </p>
+        <a class="link" href="assets/math2621-exam-sheet.pdf" target="_blank">View PDF</a> |
+        <a class="link" href="https://www.overleaf.com/read/vmggbxxxhnzx#f68238" target="_blank">View Latex</a> |
+        <a class="link" href="assets/math2621-exam-sheet.pdf" download="Math2621 Exam Sheet.pdf">Download</a>
+      </div>
+    </div>
+    <br>
+  </main>
 
   <!-- Footer -->
   <footer id="footer"></footer>

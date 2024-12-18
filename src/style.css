@@ -5,7 +5,10 @@ body {
   margin-left: 300px;
   margin-right: 300px;
   padding-bottom: 50px;
-  min-height: 500px;
+}
+
+main {
+  min-height: 100vh;
 }
 
 /* Navigation Bar */
@@ -74,6 +77,13 @@ body {
 }
 
 /* End of Navigation Bar */
+
+/* Home Page */
+.title-blue {
+  color: #3498db;
+}
+
+/* End of Home Page */
 
 /* Blog Posts */
 #blog-posts {
@@ -382,6 +392,20 @@ body {
 
 /* End of Project Sort Buttons */
 
+/* Resources */
+.resource-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.resource-title:hover {
+  color: #3498db;
+}
+
+/* End of Resources */
 
 /* Footer */
 #footer {
