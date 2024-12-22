@@ -19,12 +19,12 @@
   },
   {
     "title": "MATH1131 Course Review",
-    "date": "Dec 16, 2024",
+    "date": "Dec 18, 2024",
     "tags": ["UNSW", "Review", "Calculus", "Algebra"],
     "summary": "MATH1131 is usually the first math course taken, covering a linear algebra and calculus component. It is an extension to highschool mathematics, but goes more in depth, here is my review.",
     "image": "images/math1131-thumbnail.png",
     "link": "blogs/course-review-math1131.html",
-    "rating": 3
+    "rating": 4
   },
   {
     "title": "COMP1521 Course Review",
@@ -84,6 +84,42 @@
     "title": "Largest Prime Number In 1 Second",
     "date": "Dec 16, 2024",
     "tags": ["Math", "Fun"],
+    "summary": "What is the fastest prime number you can find in under a second of runtime? Here I utilise prime finding algorithms, and talk about the current advancements in prime numbers.",
+    "image": "images/prime-thumbnail.png",
+    "link": "blogs/fastest-prime.html",
+    "rating": 3
+  },
+  {
+    "title": "Threat or Opportunity - AI's Recent Rise",
+    "date": "Dec 23, 2024",
+    "tags": ["TODO", "Fun"],
+    "summary": "What is the fastest prime number you can find in under a second of runtime? Here I utilise prime finding algorithms, and talk about the current advancements in prime numbers.",
+    "image": "images/prime-thumbnail.png",
+    "link": "blogs/fastest-prime.html",
+    "rating": 3
+  },
+  {
+    "title": "Visualising Complex Numbers",
+    "date": "Dec 23, 2024",
+    "tags": ["TODO", "Fun"],
+    "summary": "What is the fastest prime number you can find in under a second of runtime? Here I utilise prime finding algorithms, and talk about the current advancements in prime numbers.",
+    "image": "images/prime-thumbnail.png",
+    "link": "blogs/fastest-prime.html",
+    "rating": 3
+  },
+  {
+    "title": "Famous Mathematicians",
+    "date": "Dec 23, 2024",
+    "tags": ["TODO", "Fun"],
+    "summary": "What is the fastest prime number you can find in under a second of runtime? Here I utilise prime finding algorithms, and talk about the current advancements in prime numbers.",
+    "image": "images/prime-thumbnail.png",
+    "link": "blogs/fastest-prime.html",
+    "rating": 3
+  },
+  {
+    "title": "Introduction to Data Structures",
+    "date": "Dec 23, 2024",
+    "tags": ["TODO", "Fun"],
     "summary": "What is the fastest prime number you can find in under a second of runtime? Here I utilise prime finding algorithms, and talk about the current advancements in prime numbers.",
     "image": "images/prime-thumbnail.png",
     "link": "blogs/fastest-prime.html",

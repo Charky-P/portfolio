@@ -21,8 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
       fetchBlogs(getSortType(), getSortOrder(), getSortFilter());
     });
   } else if (document.body.id === 'project-page') {
-    // Default sort by Date (descending)
-    fetchProjects('date', 'desc', 'All');
+    // Default sort by Date (ascending)
+    fetchProjects('date', 'asc', 'All');
 
     // Set up event listeners for sorting buttons
     document.getElementById('sort-project-date').addEventListener('click', () => {
