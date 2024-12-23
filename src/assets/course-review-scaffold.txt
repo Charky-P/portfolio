@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js" defer></script>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div id="nav-bar"></div>
+
+  <!-- Blog -->
+  <h1 class="title">COURSE1111 Course Review</h1>
+  <hr>
+
+  <div id="overview">
+    <h2>Overview</h2>
+    <p>... Check out the COURSE1111
+      <a href="#" target="_blank">handbook</a> and 
+      <a href="#" target="_blank">course outline</a>
+      for more information and see <a href="blogs/course-review-scaffold.html">this</a> blog post on what my ratings are based on.
+    </p>
+  </div>
+
+
+  <h2 id="rating">Ratings</h2>
+  <ul class="blog-list">
+    <li><strong>Overall:</strong> X/10</li>
+    <li><strong>Difficulty:</strong> X/10</li>
+    <li><strong>Usefulness:</strong> X/10</li>
+    <li><strong>Workload:</strong> X/10</li>
+  </ul>
+
+  <h2 id="details">Course Details</h2>
+  <ul class="blog-list">
+    <li><strong>Course Name:</strong> CourseName</li>
+    <li><strong>Term Taken:</strong> 24T1</li>
+    <li><strong>Prerequisites:</strong> None</li>
+    <li><strong>Final Mark:</strong> XX</li>
+    <li><strong>Contact Hours:</strong> Two 2-hour lectures, one 1-hour tutorial per week</li>
+    <li><strong>Assessment Structure:</strong> 
+      <ul>
+        <li>Assessment 1 (50%)</li>
+        <li>Exam (50%)</li>
+      </ul>
+    </li>
+    <li><strong>Content:</strong> Content1, Content2, Content3</li>
+  </ul>
+
+  <!-- Review -->
+  <div id="critique">
+    <h2>Critique</h2>
+    <hr>
+
+    <h3>Tutorials and Lectures</h3>
+    <p>
+    </p>
+
+    <h3>Optional</h3>
+    <p>
+    </p>
+
+    <h3>Tests</h3>
+    <p>
+    </p>
+
+    <h3>Assignments</h3>
+    <p>
+    </p>
+
+    <h3>Exam</h3>
+    <p>
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+</body>

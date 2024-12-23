@@ -152,6 +152,22 @@ main {
   margin-top: 10px;
 }
 
+.rating-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.course-name {
+  color: #3498db;
+  margin-bottom: 0px;
+}
+
+.ratings {
+  margin-left: 5px;
+  color: #2c3e50;
+  margin-bottom: 0px;
+}
+
 /* End of Blog Posts */
 
 /* Blog Sort Buttons */

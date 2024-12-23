@@ -124,5 +124,14 @@
     "image": "images/prime-thumbnail.png",
     "link": "blogs/fastest-prime.html",
     "rating": 3
+  },
+  {
+    "title": "UNSW Course Review Summaries",
+    "date": "Dec 15, 2024",
+    "tags": ["Review"],
+    "summary": "I rate every course I took at UNSW, for more information, you can check out the individual blog posts for every course.",
+    "image": "images/unsw-logo.png",
+    "link": "blogs/course-review-summaries.html",
+    "rating": 4.9
   }
 ]
