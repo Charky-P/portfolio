@@ -28,12 +28,12 @@
   },
   {
     "title": "COMP1521 Course Review",
-    "date": "Dec 15, 2024",
-    "tags": ["COMP1521", "UNSW", "MIPS", "C"],
-    "summary": "a",
+    "date": "Dec 22, 2024",
+    "tags": ["UNSW", "Review", "MIPS", "C"],
+    "summary": "COMP1521 is UNSW's Computer Systems Fundamentals, which covers lower level abstraction compared to COMP1511's C. It uses C and teaches MIPS which is an assembly language.",
     "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
-    "rating": 2
+    "link": "blogs/course-review-comp1521.html",
+    "rating": 3
   },
   {
     "title": "MATH1231 Course Review",
@@ -130,6 +130,15 @@
     "date": "Dec 15, 2024",
     "tags": ["Review"],
     "summary": "I rate every course I took at UNSW, for more information, you can check out the individual blog posts for every course.",
+    "image": "images/unsw-logo.png",
+    "link": "blogs/course-review-summaries.html",
+    "rating": 4.9
+  },
+  {
+    "title": "Googology",
+    "date": "Dec 27, 2024",
+    "tags": ["TODO"],
+    "summary": "BIG numbers",
     "image": "images/unsw-logo.png",
     "link": "blogs/course-review-summaries.html",
     "rating": 4.9
