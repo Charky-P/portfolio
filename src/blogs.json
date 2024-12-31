@@ -31,17 +31,17 @@
     "date": "Dec 22, 2024",
     "tags": ["UNSW", "Review", "MIPS", "C"],
     "summary": "COMP1521 is UNSW's Computer Systems Fundamentals, which covers lower level abstraction compared to COMP1511's C. It uses C and teaches MIPS which is an assembly language.",
-    "image": "images/comp1511-blog-image.jpg",
+    "image": "images/binary-image.png",
     "link": "blogs/course-review-comp1521.html",
     "rating": 3
   },
   {
     "title": "MATH1231 Course Review",
-    "date": "Dec 15, 2024",
+    "date": "Dec 27, 2024",
     "tags": ["MATH1231", "UNSW", "Calculus", "Algebra"],
-    "summary": "Work in progress",
-    "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
+    "summary": "MATH1231 is a continuation from the course MATH1131. It covers linear algebra and calculus content and in addition, it touches on an introduction to statistics and uses Maple as a mathematical computing software, here is my review.",
+    "image": "images/linear-transformation.svg",
+    "link": "blogs/course-review-math1231.html",
     "rating": 0
   },
   {
@@ -140,6 +140,15 @@
     "tags": ["TODO"],
     "summary": "BIG numbers",
     "image": "images/unsw-logo.png",
+    "link": "blogs/course-review-summaries.html",
+    "rating": 4.9
+  },
+  {
+    "title": "Astronomy lel",
+    "date": "Dec 27, 2024",
+    "tags": ["TODO"],
+    "summary": "SPACE",
+    "image": "images/astronomy.jpg",
     "link": "blogs/course-review-summaries.html",
     "rating": 4.9
   }
