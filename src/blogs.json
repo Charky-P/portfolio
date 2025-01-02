@@ -38,7 +38,7 @@
   {
     "title": "MATH1231 Course Review",
     "date": "Dec 27, 2024",
-    "tags": ["MATH1231", "UNSW", "Calculus", "Algebra"],
+    "tags": ["UNSW", "Review", "Calculus", "Algebra"],
     "summary": "MATH1231 is a continuation from the course MATH1131. It covers linear algebra and calculus content and in addition, it touches on an introduction to statistics and uses Maple as a mathematical computing software, here is my review.",
     "image": "images/linear-transformation.svg",
     "link": "blogs/course-review-math1231.html",
@@ -46,29 +46,29 @@
   },
   {
     "title": "COMP2521 Course Review",
-    "date": "Dec 15, 2024",
-    "tags": ["COMP2521", "UNSW", "C", "Algorithms"],
-    "summary": "Work in progress",
-    "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
+    "date": "Dec 29, 2024",
+    "tags": ["UNSW", "Review", "C", "Algorithms"],
+    "summary": "COMP2521 covers data structures and algorithms and is essential to a computer scientist, this course had its ups and downs, here is my review.",
+    "image": "images/comp2521-graph.png",
+    "link": "blogs/course-review-comp2521.html",
     "rating": 0
   },
   {
     "title": "COMP1531 Course Review",
     "date": "Dec 15, 2024",
-    "tags": ["COMP1531", "UNSW", "JavaScript", "TypeScript", "Git"],
-    "summary": "Work in progress",
-    "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
+    "tags": ["UNSW", "Review", "JavaScript", "TypeScript", "Git"],
+    "summary": "COMP1531 is a dreaded course for most students since it requires group work, however it is a great introduction to software engineering and teaches useful content, like JavaScript and Git, here is my review.",
+    "image": "images/sldc.jpg",
+    "link": "blogs/course-review-comp1531.html",
     "rating": 0
   },
   {
     "title": "MATH1081 Course Review",
-    "date": "Dec 15, 2024",
-    "tags": ["MATH1081", "UNSW", "Discrete"],
-    "summary": "Work in progress",
-    "image": "images/comp1511-blog-image.jpg",
-    "link": "blogs/comp1511-blog.html",
+    "date": "Jan 1, 2025",
+    "tags": ["UNSW", "Review", "Discrete"],
+    "summary": "MATH1081 or Discrete Mathematics is a course fundamental to computer scientists as it tackles topics like number theory, combinatorics and graph theory, here is my review.",
+    "image": "images/venn-diagram.png",
+    "link": "blogs/course-review-math1081.html",
     "rating": 0
   },
   {
