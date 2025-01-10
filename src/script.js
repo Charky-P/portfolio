@@ -159,11 +159,14 @@ function sortBlogs(blogs, sortBy, sortOrder, sortFilter) {
     }
   });
 
-  console.log(blogs, sortBy, sortOrder, sortFilter);
   if (sortFilter === 'All') {
     return sortedBlogs;
+  } else if (sortFilter === 'Review') {
+    return sortedBlogs.filter(blog => blog.tags.includes(sortFilter));
+  } else {
+    // Is not a review
+    return sortedBlogs.filter(blog => !blog.tags.includes('Review'));
   }
-  return sortedBlogs.filter(blog => blog.tags.includes(sortFilter));
 }
 
 /**
